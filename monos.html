@@ -8,11 +8,12 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 	
 </head>
 
 <body class="w-100">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark w-100">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark w-100 col-12">
 	  <ul class="navbar-nav">
 	    <li class="nav-item ">
 	      <a class="nav-link" href="pobs.html">POBs</a>
@@ -37,39 +38,39 @@
 	</div>
 	<div class="row d-flex justify-content-between text-center mt-5">
 			<div class="row">
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">TWICECOASTER LANE 1</label><br/>
 					<img class="monoimage" src="tcl1mono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">SIGNAL</label><br/>
 					<img class="monoimage" src="signalmono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">TWICETAGRAM</label><br/>
 					<img class="monoimage" src="twicetagrammono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">MERRY & HAPPY</label><br/>
 					<img class="monoimage" src="merryandhappymono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">WHAT IS LOVE</label><br/>
 					<img class="monoimage" src="whatislovemono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">SUMMER NIGHTS</label><br/>
 					<img class="monoimage" src="summernightsmono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">YES OR YES</label><br/>
 					<img class="monoimage" src="yesoryesmono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">THE YEAR OF YES</label><br/>
 					<img class="monoimage" src="yearofyesmono.jpg"/>
 				</div>
-				<div class="col-md-4 col-12 mt-4">
+				<div class="col-md-4 col-11 mt-4">
 					<label class="text-center text-monospace">FANCY</label><br/>
 					<img class="monoimage" src="fancymono.jpg"/>
 				</div>
@@ -125,10 +126,25 @@
 		});
 	</script>
 	<style type="text/css">
-		.monoimage{
-			height: 500px;
-			width: 450px;
+		@media (min-width: 1281px) {
+	 		.monoimage{
+				height: 520px !important;
+				width: 450px !important;
+			}
+		} 
+		@media (min-width: 768px) and (max-width: 1024px) {
+  			.monoimage{
+				height: 250px !important;
+				width: 200px !important;
+			}
 		}
+	 	@media (max-width: 767px) {
+			.monoimage{
+				height: 350px !important;
+				width: 250px !important;
+			}		  
+		}
+	  
 	</style>
 </body>
 </html>
