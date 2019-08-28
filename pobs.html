@@ -1,0 +1,83 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	  <ul class="navbar-nav">
+	    <li class="nav-item active">
+	      <a class="nav-link" href="pobs.html">POBs</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="monos.html">MONOS</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="#">JAPAN PHOTOCARD SETS</a>
+	    </li>
+	  </ul>
+	</nav>
+
+	<div class="container w-100 mt-4 ">
+		<div class="row ">
+			<div class="col-md-6 col-12" id="first">
+
+			</div>
+			<div class="col-md-6 col-12" id="second">
+			</div>
+		</div>
+	</div>
+	<div class="row d-flex justify-content-between text-center mt-5">
+			<img src="preorder1.jpg"/>
+			<img src="preorder2.jpg"/>
+	</div>
+	<script>
+		var pobs = ["TCL1", "TCL2 Apricot", "TCL2 Magenta", "Signal", "Twicetagram", "Merry & Happy", "What is Love Yellow", "What is Love Pink", "Summer Nights Blue", "Summer Nights White", "Summer Nights Black", "Yes or Yes Red", "Yes or Yes White", "Yes or Yes Black", "The Year of Yes Beige", "The Year of Yes Maroon", "Fancy You A", "Fancy You B", "Fancy You C"];
+		var count = pobs.length;
+		var html = "";
+		var html2 = "";
+		var numberInColumn = Math.round(count/2);
+		for (i = 0; i <= numberInColumn-1; i++) {
+		  var pobname = pobs[i];
+		  html +=  "<div class='custom-control custom-checkbox'>"+
+				  		"<input type='checkbox' class='custom-control-input box'id='"+pobname+"'>"+
+				  		"<label class='custom-control-label' for='"+pobname+"'>"+pobname+"</label>"+
+					"</div>";		  
+		}
+		for (j = numberInColumn; j <= count-1; j++) {
+		  var pobname2 = pobs[j];	
+		  html2 +=  "<div class='custom-control custom-checkbox' >"+
+				  		"<input type='checkbox' class='custom-control-input box' id='"+pobname2+"'>"+
+				  		"<label class='custom-control-label' for='"+pobname2+"'>"+pobname2+"</label>"+
+					"</div>";		  
+		}
+		$("#first").append(html);
+		$("#second").append(html2);
+	</script>
+	<script type="text/javascript">
+		function onClickBox() {
+			var arr = $('.box').map(function() {
+		  	return this.checked;
+		  }).get();
+		  localStorage.setItem("pobs", JSON.stringify(arr));
+		}
+
+		$(document).ready(function() {
+			var arr = JSON.parse(localStorage.getItem('pobs')) || [];
+		  arr.forEach(function(checked, i) {
+		  	$('.box').eq(i).prop('checked', checked);
+		  });
+
+		  $(".box").click(onClickBox);
+		});
+	</script>
+</body>
+</html>
