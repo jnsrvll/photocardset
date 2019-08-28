@@ -8,10 +8,10 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
-<body>
+<body style="padding:0; margin:0;">
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	  <ul class="navbar-nav">
 	    <li class="nav-item active">
@@ -35,9 +35,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="row d-flex justify-content-between text-center mt-5">
-			<img src="preorder1.jpg"/>
-			<img src="preorder2.jpg"/>
+	<div class="row text-center mt-5">
+			<img class="pobimage" src="preorder1.jpg"/>
+			<img class="pobimage" src="preorder2.jpg"/>
 	</div>
 	<script>
 		var pobs = ["TCL1", "TCL2 Apricot", "TCL2 Magenta", "Signal", "Twicetagram", "Merry & Happy", "What is Love Yellow", "What is Love Pink", "Summer Nights Blue", "Summer Nights White", "Summer Nights Black", "Yes or Yes Red", "Yes or Yes White", "Yes or Yes Black", "The Year of Yes Beige", "The Year of Yes Maroon", "Fancy You A", "Fancy You B", "Fancy You C"];
@@ -79,5 +79,26 @@
 		  $(".box").click(onClickBox);
 		});
 	</script>
+	<style type="text/css">
+		@media (min-width: 1281px) {
+	 		.pobimage{
+				height: 1020px !important;
+				width: 650px !important;
+			}
+		} 
+		@media (min-width: 768px) and (max-width: 1024px) {
+  			.pobimage{
+				height: 930px !important;
+				width: 500px !important;
+			}
+		}
+	 	@media (max-width: 767px) {
+			.pobimage{
+				height: 630px !important;
+				width: 350px !important;
+			}		  
+		}
+	  
+	</style>
 </body>
 </html>
